@@ -1,38 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\TOAN\\BeeShop_API\\BeeShop_API.Domain\\BeeShop_API.Domain.csproj": {}
+    "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Domain\\BeeShop_API.Domain.csproj": {}
   },
   "projects": {
-    "C:\\TOAN\\BeeShop_API\\BeeShop_API.Domain\\BeeShop_API.Domain.csproj": {
+    "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Domain\\BeeShop_API.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Domain\\BeeShop_API.Domain.csproj",
+        "projectUniqueName": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Domain\\BeeShop_API.Domain.csproj",
         "projectName": "BeeShop_API.Domain",
-        "projectPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Domain\\BeeShop_API.Domain.csproj",
-        "packagesPath": "C:\\Users\\dangv\\.nuget\\packages\\",
-        "outputPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Domain\\obj\\",
+        "projectPath": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Domain\\BeeShop_API.Domain.csproj",
+        "packagesPath": "C:\\Users\\AS090\\.nuget\\packages\\",
+        "outputPath": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dangv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\AS090\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\TOAN\\02.ERP9\\00.BUILD": {},
+          "http://nuget.grapecity.com/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -40,16 +38,11 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
@@ -72,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
