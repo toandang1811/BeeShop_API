@@ -1,0 +1,12 @@
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\bin\Debug\net8.0\BeeShop_API.Domain.deps.json
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\bin\Debug\net8.0\BeeShop_API.Domain.dll
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\bin\Debug\net8.0\BeeShop_API.Domain.pdb
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\obj\Debug\net8.0\BeeShop_API.Domain.csproj.AssemblyReference.cache
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\obj\Debug\net8.0\BeeShop_API.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\obj\Debug\net8.0\BeeShop_API.Domain.AssemblyInfoInputs.cache
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\obj\Debug\net8.0\BeeShop_API.Domain.AssemblyInfo.cs
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\obj\Debug\net8.0\BeeShop_API.Domain.csproj.CoreCompileInputs.cache
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\obj\Debug\net8.0\BeeShop_API.Domain.dll
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\obj\Debug\net8.0\refint\BeeShop_API.Domain.dll
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\obj\Debug\net8.0\BeeShop_API.Domain.pdb
+C:\TOAN\BeeShop_API\BeeShop_API.Domain\obj\Debug\net8.0\ref\BeeShop_API.Domain.dll

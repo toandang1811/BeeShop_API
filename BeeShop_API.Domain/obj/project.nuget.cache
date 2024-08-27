@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "a2Ge4/sMKmQ=",
+  "success": true,
+  "projectFilePath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Domain\\BeeShop_API.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dangv\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512"
+  ],
+  "logs": []
+}
