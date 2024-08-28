@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "bbt+nCfxuFk=",
+  "success": true,
+  "projectFilePath": "C:\\TOAN\\tmp\\BeeShop_API.Domain\\BeeShop_API.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dangv\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
+    "C:\\Users\\dangv\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.19\\microsoft.windowsdesktop.app.ref.7.0.19.nupkg.sha512",
+    "C:\\Users\\dangv\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.19\\microsoft.netcore.app.ref.7.0.19.nupkg.sha512",
+    "C:\\Users\\dangv\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.19\\microsoft.aspnetcore.app.ref.7.0.19.nupkg.sha512"
+  ],
+  "logs": []
+}

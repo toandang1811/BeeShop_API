@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BeeShop_API.BusinessLogic">
+      <HintPath>..\BeeShop_API.BusinessLogic\bin\Debug\net7.0\BeeShop_API.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="BeeShop_API.DI">
+      <HintPath>..\BeeShop_API.DI\bin\Debug\net7.0\BeeShop_API.DI.dll</HintPath>
+    </Reference>
+    <Reference Include="BeeShop_API.Domain">
+      <HintPath>..\BeeShop_API.Domain\bin\Debug\net7.0\BeeShop_API.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="BeeShop_API.Services">
+      <HintPath>..\BeeShop_API.Services\bin\Debug\net7.0\BeeShop_API.Services.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
