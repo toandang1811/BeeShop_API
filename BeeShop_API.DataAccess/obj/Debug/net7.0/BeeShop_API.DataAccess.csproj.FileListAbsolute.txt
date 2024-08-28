@@ -1,5 +1,0 @@
-D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\BeeShop_API.DataAccess.csproj.AssemblyReference.cache
-D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\BeeShop_API.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
-D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\BeeShop_API.DataAccess.AssemblyInfoInputs.cache
-D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\BeeShop_API.DataAccess.AssemblyInfo.cs
-D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\BeeShop_API.DataAccess.csproj.CoreCompileInputs.cache
