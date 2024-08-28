@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\TOAN\\tmp\\BeeShop_API.Services\\BeeShop_API.Services.csproj": {}
+    "C:\\TOAN\\BeeShop_API\\BeeShop_API.Services\\BeeShop_API.Services.csproj": {}
   },
   "projects": {
-    "C:\\TOAN\\tmp\\BeeShop_API.Services\\BeeShop_API.Services.csproj": {
+    "C:\\TOAN\\BeeShop_API\\BeeShop_API.Services\\BeeShop_API.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TOAN\\tmp\\BeeShop_API.Services\\BeeShop_API.Services.csproj",
+        "projectUniqueName": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Services\\BeeShop_API.Services.csproj",
         "projectName": "BeeShop_API.Services",
-        "projectPath": "C:\\TOAN\\tmp\\BeeShop_API.Services\\BeeShop_API.Services.csproj",
+        "projectPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Services\\BeeShop_API.Services.csproj",
         "packagesPath": "C:\\Users\\dangv\\.nuget\\packages\\",
-        "outputPath": "C:\\TOAN\\tmp\\BeeShop_API.Services\\obj\\",
+        "outputPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -55,13 +55,17 @@
               "target": "Package",
               "version": "[7.0.2, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[7.0.0, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.NETCore.App": {
               "target": "Package",
@@ -69,7 +73,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.3, )"
+              "version": "[13.0.2, )"
             },
             "System.Net.Http": {
               "target": "Package",

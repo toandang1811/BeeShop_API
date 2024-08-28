@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\TOAN\\tmp\\BeeShop_API\\BeeShop_API.csproj": {}
+    "C:\\TOAN\\BeeShop_API\\BeeShop_API\\BeeShop_API.csproj": {}
   },
   "projects": {
-    "C:\\TOAN\\tmp\\BeeShop_API\\BeeShop_API.csproj": {
+    "C:\\TOAN\\BeeShop_API\\BeeShop_API\\BeeShop_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TOAN\\tmp\\BeeShop_API\\BeeShop_API.csproj",
+        "projectUniqueName": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\BeeShop_API.csproj",
         "projectName": "BeeShop_API",
-        "projectPath": "C:\\TOAN\\tmp\\BeeShop_API\\BeeShop_API.csproj",
+        "projectPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\BeeShop_API.csproj",
         "packagesPath": "C:\\Users\\dangv\\.nuget\\packages\\",
-        "outputPath": "C:\\TOAN\\tmp\\BeeShop_API\\obj\\",
+        "outputPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -53,7 +53,27 @@
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.4.0, )"
+              "version": "[11.9.2, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.OpenApi": {
+              "target": "Package",
+              "version": "[1.6.18, )"
+            },
+            "NReco.Logging.File": {
+              "target": "Package",
+              "version": "[1.2.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

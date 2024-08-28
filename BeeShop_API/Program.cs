@@ -16,7 +16,7 @@ builder.Services.AddMvc()
 DependencyResolver.AddSwagger(builder.Services);
 DependencyResolver.RegisterServices(builder.Services);
 DependencyResolver.AddAuthentication(builder.Services, builder.Configuration);
-DependencyResolver.AddLogging(builder.Services);
+DependencyResolver. AddLogging(builder.Services);
 
 var app = builder.Build();
 

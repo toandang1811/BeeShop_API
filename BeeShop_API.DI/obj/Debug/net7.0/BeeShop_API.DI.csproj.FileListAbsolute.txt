@@ -10,3 +10,15 @@ C:\TOAN\BeeShop_API\BeeShop_API.DI\obj\Debug\net7.0\BeeShop_API.DI.dll
 C:\TOAN\BeeShop_API\BeeShop_API.DI\obj\Debug\net7.0\refint\BeeShop_API.DI.dll
 C:\TOAN\BeeShop_API\BeeShop_API.DI\obj\Debug\net7.0\BeeShop_API.DI.pdb
 C:\TOAN\BeeShop_API\BeeShop_API.DI\obj\Debug\net7.0\ref\BeeShop_API.DI.dll
+C:\TOAN\BeeShop_API\BeeShop_API.DI\bin\Debug\net7.0\BeeShop_API.BusinessLogic.dll
+C:\TOAN\BeeShop_API\BeeShop_API.DI\bin\Debug\net7.0\BeeShop_API.DataAccess.dll
+C:\TOAN\BeeShop_API\BeeShop_API.DI\bin\Debug\net7.0\BeeShop_API.Repositories.dll
+C:\TOAN\BeeShop_API\BeeShop_API.DI\bin\Debug\net7.0\BeeShop_API.Services.dll
+C:\TOAN\BeeShop_API\BeeShop_API.DI\bin\Debug\net7.0\BeeShop_API.Domain.dll
+C:\TOAN\BeeShop_API\BeeShop_API.DI\bin\Debug\net7.0\BeeShop_API.BusinessLogic.pdb
+C:\TOAN\BeeShop_API\BeeShop_API.DI\bin\Debug\net7.0\BeeShop_API.DataAccess.pdb
+C:\TOAN\BeeShop_API\BeeShop_API.DI\bin\Debug\net7.0\BeeShop_API.Repositories.pdb
+C:\TOAN\BeeShop_API\BeeShop_API.DI\bin\Debug\net7.0\BeeShop_API.Services.pdb
+C:\TOAN\BeeShop_API\BeeShop_API.DI\bin\Debug\net7.0\BeeShop_API.Domain.pdb
+C:\TOAN\BeeShop_API\BeeShop_API.DI\obj\Debug\net7.0\BeeShop_API.DI.csproj.AssemblyReference.cache
+C:\TOAN\BeeShop_API\BeeShop_API.DI\obj\Debug\net7.0\BeeShop_.BCB351A0.Up2Date

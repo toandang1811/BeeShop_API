@@ -640,11 +640,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\TOAN\\tmp\\BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj",
+      "projectUniqueName": "C:\\TOAN\\BeeShop_API\\BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj",
       "projectName": "BeeShop_API.BusinessLogic",
-      "projectPath": "C:\\TOAN\\tmp\\BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj",
+      "projectPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj",
       "packagesPath": "C:\\Users\\dangv\\.nuget\\packages\\",
-      "outputPath": "C:\\TOAN\\tmp\\BeeShop_API.BusinessLogic\\obj\\",
+      "outputPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
