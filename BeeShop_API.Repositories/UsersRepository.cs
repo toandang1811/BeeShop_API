@@ -28,12 +28,20 @@ namespace BeeShop_API.Repositories
 
         public async Task<User> GetByUsernameWithPassword(string username)
         {
-            var user = await DataContext.Users.FirstAsync(u => u.Username.ToLower() == username.ToLower());
+            try
+            {
+                var user = await DataContext.Users.FirstAsync(u => u.Username.ToLower() == username.ToLower());
 
-            var result = userMapper.FillFromDataAccess(user);
-            result.PasswordHash = user.PasswordHash;
+                var result = userMapper.FillFromDataAccess(user);
+                result.PasswordHash = user.PasswordHash;
 
-            return result;
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
         }
 
         public async Task<User> GetByEmailWithPassword(string email)

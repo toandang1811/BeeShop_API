@@ -37,7 +37,8 @@ namespace BeeShop_API.Repositories.Mappers
             {
                 UserId = user.UserId,
                 Username = user.Username,
-                Email = user.Email
+                Email = user.Email,
+                PasswordHash = user.PasswordHash,
             };
         }
     }

@@ -28,3 +28,8 @@ C:\TOAN\BeeShop_API\BeeShop_API.Repositories\bin\Debug\net7.0\BeeShop_API.DataAc
 C:\TOAN\BeeShop_API\BeeShop_API.Repositories\bin\Debug\net7.0\BeeShop_API.Domain.pdb
 C:\TOAN\BeeShop_API\BeeShop_API.Repositories\obj\Debug\net7.0\BeeShop_.F78836B7.Up2Date
 C:\TOAN\BeeShop_API\BeeShop_API.Repositories\obj\Debug\net7.0\ref\BeeShop_API.Repositories.dll
+D:\BeeShop\BeeShop_API\BeeShop_API.Repositories\bin\Debug\net7.0\BeeShop_API.DataAccess.dll
+D:\BeeShop\BeeShop_API\BeeShop_API.Repositories\bin\Debug\net7.0\BeeShop_API.Domain.dll
+D:\BeeShop\BeeShop_API\BeeShop_API.Repositories\bin\Debug\net7.0\BeeShop_API.DataAccess.pdb
+D:\BeeShop\BeeShop_API\BeeShop_API.Repositories\bin\Debug\net7.0\BeeShop_API.Domain.pdb
+D:\BeeShop\BeeShop_API\BeeShop_API.Repositories\obj\Debug\net7.0\BeeShop_API.Repositories.csproj.CopyComplete

@@ -84,6 +84,35 @@
           "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets": {}
         }
       },
+      "Microsoft.AspNetCore.Cryptography.Internal/7.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation/7.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.Internal": "7.0.2"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -2312,9 +2341,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.2",
           "Microsoft.AspNetCore.Components.Analyzers": "7.0.2",
           "Microsoft.EntityFrameworkCore": "7.0.2",
-          "Microsoft.Extensions.Configuration.Binder": "7.0.2"
+          "Microsoft.Extensions.Configuration.Binder": "7.0.2",
+          "Microsoft.IdentityModel.Tokens": "7.0.2"
         },
         "compile": {
           "bin/placeholder/BeeShop_API.BusinessLogic.dll": {}
@@ -2328,12 +2359,14 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "FluentValidation": "11.9.2",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.2",
           "Microsoft.AspNetCore.Components.Analyzers": "7.0.2",
           "Microsoft.EntityFrameworkCore": "7.0.2",
           "Microsoft.EntityFrameworkCore.Analyzers": "7.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Microsoft.Extensions.Configuration.Binder": "7.0.2",
+          "Microsoft.IdentityModel.Tokens": "7.0.2",
           "Microsoft.OpenApi": "1.6.18",
           "NReco.Logging.File": "1.2.1",
           "Newtonsoft.Json": "13.0.2",
@@ -2351,7 +2384,8 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.2",
-          "Microsoft.EntityFrameworkCore": "7.0.2"
+          "Microsoft.EntityFrameworkCore": "7.0.2",
+          "Microsoft.IdentityModel.Tokens": "7.0.2"
         },
         "compile": {
           "bin/placeholder/BeeShop_API.Repositories.dll": {}
@@ -2365,11 +2399,14 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.2",
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "7.0.2",
           "Microsoft.EntityFrameworkCore": "7.0.2",
           "Microsoft.Extensions.Configuration": "7.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "7.0.2",
           "Microsoft.IdentityModel.Tokens": "7.0.2",
           "Microsoft.NETCore.App": "2.2.8",
           "Newtonsoft.Json": "13.0.2",
+          "Swashbuckle.AspNetCore": "6.4.0",
           "System.Net.Http": "4.3.4"
         },
         "compile": {
@@ -2474,6 +2511,44 @@
         "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
         "microsoft.aspnetcore.components.analyzers.7.0.2.nupkg.sha512",
         "microsoft.aspnetcore.components.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Cryptography.Internal/7.0.2": {
+      "sha512": "Vvg3U7+6AmSTYHBKJc1ksbTVDwDs5C4ShJiS6IK8lTMM25a1fdZIZZ8zIr5qGoRgxI87wXJLNYElMCxJbTXb4A==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.cryptography.internal/7.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net462/Microsoft.AspNetCore.Cryptography.Internal.dll",
+        "lib/net462/Microsoft.AspNetCore.Cryptography.Internal.xml",
+        "lib/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll",
+        "lib/net7.0/Microsoft.AspNetCore.Cryptography.Internal.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.xml",
+        "microsoft.aspnetcore.cryptography.internal.7.0.2.nupkg.sha512",
+        "microsoft.aspnetcore.cryptography.internal.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Cryptography.KeyDerivation/7.0.2": {
+      "sha512": "h7us9WZM1esC/B2pJNgKzZMjQP+azS2mS/qxJjW63VqMB+OmzYnDz7wqoBS29xiI9g8mvCC6eerzZiHR3zpOeg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.cryptography.keyderivation/7.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net462/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+        "lib/net462/Microsoft.AspNetCore.Cryptography.KeyDerivation.xml",
+        "lib/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+        "lib/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.xml",
+        "microsoft.aspnetcore.cryptography.keyderivation.7.0.2.nupkg.sha512",
+        "microsoft.aspnetcore.cryptography.keyderivation.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -4141,12 +4216,11 @@
       ]
     },
     "runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "DloMk88juo0OuOWr56QG7MNchmafTLYWvABy36izkrLI5VledI0rq28KGs1i9wbpeT9NPQrx/wTf8U2vazqQ3Q==",
+      "sha512": "jwjwlEL0Elv6gwoyaokRn12nv/JE+UW/DXJEbzhjCPvGbef36StnHKc9XaZD/rGWqYicrphZ7eumR/jdmNcjRg==",
       "type": "package",
       "path": "runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -4197,12 +4271,11 @@
       ]
     },
     "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "kVXCuMTrTlxq4XOOMAysuNwsXWpYeboGddNGpIgNSZmv1b6r/s/DPk0fYMB7Q5Qo4bY68o48jt4T4y5BVecbCQ==",
+      "sha512": "Kh9W4agE0r/hK8AX1LvyQI2NrKHBL8pO0gRoDTdDb0LL6Ta1Z2OtFx3lOaAE0ZpCUc/dt9Wzs3rA7a3IsKdOVA==",
       "type": "package",
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple.4.3.0.nupkg.sha512",
@@ -6858,30 +6931,30 @@
       "BeeShop_API.Services >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.2",
+      "Microsoft.IdentityModel.Tokens >= 7.0.2",
       "Microsoft.OpenApi >= 1.6.18",
       "NReco.Logging.File >= 1.2.1",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dangv\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\AS090\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DI\\BeeShop_API.DI.csproj",
+      "projectUniqueName": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.DI\\BeeShop_API.DI.csproj",
       "projectName": "BeeShop_API.DI",
-      "projectPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DI\\BeeShop_API.DI.csproj",
-      "packagesPath": "C:\\Users\\dangv\\.nuget\\packages\\",
-      "outputPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DI\\obj\\",
+      "projectPath": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.DI\\BeeShop_API.DI.csproj",
+      "packagesPath": "C:\\Users\\AS090\\.nuget\\packages\\",
+      "outputPath": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.DI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\dangv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\AS090\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6889,25 +6962,24 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\TOAN\\02.ERP9\\00.BUILD": {},
+        "http://nuget.grapecity.com/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\TOAN\\BeeShop_API\\BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj": {
-              "projectPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj"
+            "D:\\BeeShop\\BeeShop_API\\BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj": {
+              "projectPath": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj"
             },
-            "C:\\TOAN\\BeeShop_API\\BeeShop_API.DataAccess\\BeeShop_API.DataAccess.csproj": {
-              "projectPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DataAccess\\BeeShop_API.DataAccess.csproj"
+            "D:\\BeeShop\\BeeShop_API\\BeeShop_API.DataAccess\\BeeShop_API.DataAccess.csproj": {
+              "projectPath": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.DataAccess\\BeeShop_API.DataAccess.csproj"
             },
-            "C:\\TOAN\\BeeShop_API\\BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj": {
-              "projectPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj"
+            "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj": {
+              "projectPath": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj"
             },
-            "C:\\TOAN\\BeeShop_API\\BeeShop_API.Services\\BeeShop_API.Services.csproj": {
-              "projectPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Services\\BeeShop_API.Services.csproj"
+            "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Services\\BeeShop_API.Services.csproj": {
+              "projectPath": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Services\\BeeShop_API.Services.csproj"
             }
           }
         }
@@ -6916,11 +6988,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -6932,6 +6999,10 @@
             "version": "[7.0.2, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[7.0.2, )"
+          },
+          "Microsoft.IdentityModel.Tokens": {
             "target": "Package",
             "version": "[7.0.2, )"
           },
@@ -6959,27 +7030,21 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.19, 7.0.19]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.19, 7.0.19]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.19, 7.0.19]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.grapecity.com/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }

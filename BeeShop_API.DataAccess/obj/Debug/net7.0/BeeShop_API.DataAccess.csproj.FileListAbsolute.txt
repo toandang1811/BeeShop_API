@@ -16,3 +16,10 @@ C:\TOAN\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\BeeShop_API.DataAcce
 C:\TOAN\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\refint\BeeShop_API.DataAccess.dll
 C:\TOAN\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\BeeShop_API.DataAccess.pdb
 C:\TOAN\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\ref\BeeShop_API.DataAccess.dll
+D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\bin\Debug\net7.0\BeeShop_API.DataAccess.deps.json
+D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\bin\Debug\net7.0\BeeShop_API.DataAccess.dll
+D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\bin\Debug\net7.0\BeeShop_API.DataAccess.pdb
+D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\BeeShop_API.DataAccess.dll
+D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\refint\BeeShop_API.DataAccess.dll
+D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\BeeShop_API.DataAccess.pdb
+D:\BeeShop\BeeShop_API\BeeShop_API.DataAccess\obj\Debug\net7.0\ref\BeeShop_API.DataAccess.dll
