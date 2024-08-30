@@ -1,14 +1,10 @@
 ﻿using BeeShop_API.Services.Contracts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BeeShop_API.Services
 {
@@ -32,7 +28,19 @@ namespace BeeShop_API.Services
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
             );
 
-            return new JwtSecurityTokenHandler().WriteToken(jwtToken);
+            try
+            {
+                return new JwtSecurityTokenHandler().WriteToken(jwtToken);
+            }
+            catch (TypeInitializationException ex)
+            {
+                Console.WriteLine($"TypeInitializationException: {ex.Message}");
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+                }
+                throw;
+            }
         }
 
         public string GenerateRefreshToken()
