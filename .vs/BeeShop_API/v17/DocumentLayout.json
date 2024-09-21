@@ -3,20 +3,52 @@
   "WorkspaceRootPath": "C:\\TOAN\\BeeShop_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC12ACB7-A4AE-4F9A-9BF9-204112883FD7}|BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj|c:\\toan\\beeshop_api\\beeshop_api.repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC12ACB7-A4AE-4F9A-9BF9-204112883FD7}|BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj|solutionrelative:beeshop_api.repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2896AB1F-4D06-4FBB-BEF7-30C9F6E9B8F7}|BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj|c:\\toan\\beeshop_api\\beeshop_api.businesslogic\\authbusinesslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2896AB1F-4D06-4FBB-BEF7-30C9F6E9B8F7}|BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj|solutionrelative:beeshop_api.businesslogic\\authbusinesslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|c:\\toan\\beeshop_api\\beeshop_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|solutionrelative:beeshop_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|c:\\toan\\beeshop_api\\beeshop_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|solutionrelative:beeshop_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D83C45D-957C-42B9-9C5E-48AEC2E79B6C}|BeeShop_API.Services\\BeeShop_API.Services.csproj|c:\\toan\\beeshop_api\\beeshop_api.services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D83C45D-957C-42B9-9C5E-48AEC2E79B6C}|BeeShop_API.Services\\BeeShop_API.Services.csproj|solutionrelative:beeshop_api.services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|c:\\toan\\beeshop_api\\beeshop_api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|solutionrelative:beeshop_api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|c:\\toan\\beeshop_api\\beeshop_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|solutionrelative:beeshop_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|c:\\toan\\beeshop_api\\beeshop_api\\beeshop_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|solutionrelative:beeshop_api\\beeshop_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|c:\\toan\\beeshop_api\\beeshop_api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|solutionrelative:beeshop_api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|c:\\toan\\beeshop_api\\beeshop_api\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|solutionrelative:beeshop_api\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AC10DD82-E3FF-42D0-BF44-EFE8A2AF2258}|BeeShop_API.Domain\\BeeShop_API.Domain.csproj|c:\\toan\\beeshop_api\\beeshop_api.domain\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AC10DD82-E3FF-42D0-BF44-EFE8A2AF2258}|BeeShop_API.Domain\\BeeShop_API.Domain.csproj|solutionrelative:beeshop_api.domain\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC12ACB7-A4AE-4F9A-9BF9-204112883FD7}|BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj|c:\\toan\\beeshop_api\\beeshop_api.repositories\\usersessionsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC12ACB7-A4AE-4F9A-9BF9-204112883FD7}|BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj|solutionrelative:beeshop_api.repositories\\usersessionsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D83C45D-957C-42B9-9C5E-48AEC2E79B6C}|BeeShop_API.Services\\BeeShop_API.Services.csproj|c:\\toan\\beeshop_api\\beeshop_api.services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D83C45D-957C-42B9-9C5E-48AEC2E79B6C}|BeeShop_API.Services\\BeeShop_API.Services.csproj|solutionrelative:beeshop_api.services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC12ACB7-A4AE-4F9A-9BF9-204112883FD7}|BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj|c:\\toan\\beeshop_api\\beeshop_api.repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC12ACB7-A4AE-4F9A-9BF9-204112883FD7}|BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj|solutionrelative:beeshop_api.repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AC10DD82-E3FF-42D0-BF44-EFE8A2AF2258}|BeeShop_API.Domain\\BeeShop_API.Domain.csproj|c:\\toan\\beeshop_api\\beeshop_api.domain\\entities\\tokenmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,22 +75,6 @@
       "RelativeMoniker": "D:0:0:{4858FCE2-3A8D-4083-8F9D-F03AB4CB08DD}|BeeShop_API.DataAccess\\BeeShop_API.DataAccess.csproj|solutionrelative:beeshop_api.dataaccess\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|c:\\toan\\beeshop_api\\beeshop_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|solutionrelative:beeshop_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC12ACB7-A4AE-4F9A-9BF9-204112883FD7}|BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj|c:\\toan\\beeshop_api\\beeshop_api.repositories\\usersessionsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC12ACB7-A4AE-4F9A-9BF9-204112883FD7}|BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj|solutionrelative:beeshop_api.repositories\\usersessionsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2896AB1F-4D06-4FBB-BEF7-30C9F6E9B8F7}|BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj|c:\\toan\\beeshop_api\\beeshop_api.businesslogic\\authbusinesslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2896AB1F-4D06-4FBB-BEF7-30C9F6E9B8F7}|BeeShop_API.BusinessLogic\\BeeShop_API.BusinessLogic.csproj|solutionrelative:beeshop_api.businesslogic\\authbusinesslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|c:\\toan\\beeshop_api\\beeshop_api\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CB7ED7F-1200-4B27-A944-A2984564A82D}|BeeShop_API\\BeeShop_API.csproj|solutionrelative:beeshop_api\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9D83C45D-957C-42B9-9C5E-48AEC2E79B6C}|BeeShop_API.Services\\BeeShop_API.Services.csproj|c:\\toan\\beeshop_api\\beeshop_api.services\\cryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D83C45D-957C-42B9-9C5E-48AEC2E79B6C}|BeeShop_API.Services\\BeeShop_API.Services.csproj|solutionrelative:beeshop_api.services\\cryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -78,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -89,21 +105,60 @@
               "Name": "ST:1547168515:0:{81164725-9a96-4ece-a4cb-440d8fd285e5}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "BeeShop_API.http",
+              "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\BeeShop_API.http",
+              "RelativeDocumentMoniker": "BeeShop_API\\BeeShop_API.http",
+              "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\BeeShop_API.http",
+              "RelativeToolTip": "BeeShop_API\\BeeShop_API.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-09-11T06:41:37.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "BeeShop_API\\appsettings.Development.json",
+              "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\appsettings.Development.json",
+              "RelativeToolTip": "BeeShop_API\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-11T06:41:24.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\Program.cs",
+              "RelativeDocumentMoniker": "BeeShop_API\\Program.cs",
+              "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\Program.cs",
+              "RelativeToolTip": "BeeShop_API\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T06:39:36.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\appsettings.json",
               "RelativeDocumentMoniker": "BeeShop_API\\appsettings.json",
               "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\appsettings.json",
               "RelativeToolTip": "BeeShop_API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-30T09:38:34.416Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-30T09:38:34.416Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "TokenModel.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Domain\\Entities\\TokenModel.cs",
               "RelativeDocumentMoniker": "BeeShop_API.Domain\\Entities\\TokenModel.cs",
@@ -115,19 +170,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Domain\\Entities\\Users.cs",
               "RelativeDocumentMoniker": "BeeShop_API.Domain\\Entities\\Users.cs",
               "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Domain\\Entities\\Users.cs",
               "RelativeToolTip": "BeeShop_API.Domain\\Entities\\Users.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-30T07:45:03.869Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "ProductCategories.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DataAccess\\ProductCategories.cs",
               "RelativeDocumentMoniker": "BeeShop_API.DataAccess\\ProductCategories.cs",
@@ -139,57 +194,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "UserSessionsRepository.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Repositories\\UserSessionsRepository.cs",
               "RelativeDocumentMoniker": "BeeShop_API.Repositories\\UserSessionsRepository.cs",
               "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Repositories\\UserSessionsRepository.cs",
               "RelativeToolTip": "BeeShop_API.Repositories\\UserSessionsRepository.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAA1wDoAAAAMAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAswD8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-29T06:08:42.733Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "AuthBusinessLogic.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.BusinessLogic\\AuthBusinessLogic.cs",
               "RelativeDocumentMoniker": "BeeShop_API.BusinessLogic\\AuthBusinessLogic.cs",
               "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API.BusinessLogic\\AuthBusinessLogic.cs",
               "RelativeToolTip": "BeeShop_API.BusinessLogic\\AuthBusinessLogic.cs",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAowIAAAAAMAAAA",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAgwHAAAABwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-29T01:56:04.232Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "BeeShop_API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "BeeShop_API\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB0AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-11T06:50:44.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "UsersRepository.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Repositories\\UsersRepository.cs",
               "RelativeDocumentMoniker": "BeeShop_API.Repositories\\UsersRepository.cs",
               "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Repositories\\UsersRepository.cs",
               "RelativeToolTip": "BeeShop_API.Repositories\\UsersRepository.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAowCAAAAAQAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAIBJwDAAAABlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T01:56:04.247Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-29T01:56:04.247Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Services\\TokenService.cs",
               "RelativeDocumentMoniker": "BeeShop_API.Services\\TokenService.cs",
               "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Services\\TokenService.cs",
               "RelativeToolTip": "BeeShop_API.Services\\TokenService.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAowBQAAAAMAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBJwBQAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-28T07:54:14.012Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "Products.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DataAccess\\Products.cs",
               "RelativeDocumentMoniker": "BeeShop_API.DataAccess\\Products.cs",
@@ -201,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DataAccess\\Users.cs",
               "RelativeDocumentMoniker": "BeeShop_API.DataAccess\\Users.cs",
@@ -213,19 +279,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "DependencyResolver.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DI\\DependencyResolver.cs",
               "RelativeDocumentMoniker": "BeeShop_API.DI\\DependencyResolver.cs",
               "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DI\\DependencyResolver.cs",
               "RelativeToolTip": "BeeShop_API.DI\\DependencyResolver.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAA6wJAAAAAPAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAAAAiwJAAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-28T04:12:46.757Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "CommonAbstracts.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DataAccess\\Abstracts\\CommonAbstracts.cs",
               "RelativeDocumentMoniker": "BeeShop_API.DataAccess\\Abstracts\\CommonAbstracts.cs",
@@ -237,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 7,
               "Title": "Globals.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\Globals.cs",
               "RelativeDocumentMoniker": "BeeShop_API\\Globals.cs",
@@ -249,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "CryptoService.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Services\\CryptoService.cs",
               "RelativeDocumentMoniker": "BeeShop_API.Services\\CryptoService.cs",
@@ -261,20 +327,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "BeeShop_API\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\Controllers\\AuthController.cs",
               "RelativeToolTip": "BeeShop_API\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAAADwAAAAIAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAAiwDAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T01:56:04.227Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-29T01:56:04.227Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "DataContext.cs",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DataAccess\\DataContext.cs",
               "RelativeDocumentMoniker": "BeeShop_API.DataAccess\\DataContext.cs",
@@ -286,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "BeeShop_API.DI.csproj",
               "DocumentMoniker": "C:\\TOAN\\BeeShop_API\\BeeShop_API.DI\\BeeShop_API.DI.csproj",
               "RelativeDocumentMoniker": "BeeShop_API.DI\\BeeShop_API.DI.csproj",

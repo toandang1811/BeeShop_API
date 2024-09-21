@@ -46,7 +46,8 @@ namespace BeeShop_API.Controllers
         [HttpPost("authenticate-mobile")]
         public async Task<IActionResult> AuthenticateMobile([FromBody] LoginCredentials loginCredentials)
         {
-            return new ObjectResult(await authBusinessLogic.ProcessAuthenticate(loginCredentials));
+            var rs = new ObjectResult(await authBusinessLogic.ProcessAuthenticate(loginCredentials));
+            return rs;
         }
 
         [AllowAnonymous]
