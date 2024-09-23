@@ -13,10 +13,9 @@ namespace BeeShop_API.Controllers
     {
         [AllowAnonymous]
         [HttpPost("get-all")]
-        public async Task<IActionResult> ProductGetAll([FromBody] LoginCredentials loginCredentials)
+        public async Task<IActionResult> GetAll([FromBody] LoginCredentials loginCredentials)
         {
-            var rs = new ObjectResult(await authBusinessLogic.ProcessAuthenticate(loginCredentials));
-            return rs;
+            throw new NotImplementedException();
         }
     }
 }

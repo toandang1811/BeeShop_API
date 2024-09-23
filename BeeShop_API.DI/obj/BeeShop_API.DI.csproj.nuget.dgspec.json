@@ -421,6 +421,10 @@
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[7.0.2, )"
+            },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[10.2.1, )"
             }
           },
           "imports": [

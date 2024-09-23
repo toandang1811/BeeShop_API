@@ -1,4 +1,5 @@
-﻿using BeeShop_API.Domain.Entities;
+﻿using BeeShop_API.DataAccess;
+using BeeShop_API.Domain.Entities;
 using BeeShop_API.Repositories.Contracts.Mappers;
 using System;
 using System.Collections.Generic;
@@ -8,22 +9,27 @@ using System.Threading.Tasks;
 
 namespace BeeShop_API.Repositories.Mappers
 {
-    public class UserSessionMapper : IUserSessionMapper
+    public class UserSessionMapper : IMapperCommon<DataAccess.UserSessions, Domain.Entities.UserSessions>
     {
-        public DataAccess.UserSessions FillFromDomain(UserSessions userSession)
+        public Domain.Entities.UserSessions FillFromDataAccess(DataAccess.UserSessions obj)
         {
-            if (userSession is null)
+            throw new NotImplementedException();
+        }
+
+        public DataAccess.UserSessions FillFromDomain(Domain.Entities.UserSessions obj)
+        {
+            if (obj is null)
             {
-                throw new ArgumentNullException(nameof(userSession));
+                throw new ArgumentNullException(nameof(obj));
             }
 
             return new DataAccess.UserSessions
             {
-                SessionId = userSession.SessionId,
-                UserId = userSession.UserId,
-                RefreshToken = userSession.RefreshToken,
-                ExpirationDate = userSession.ExpirationDate,
-                IpAddress = userSession.IpAddress
+                SessionId = obj.SessionId,
+                UserId = obj.UserId,
+                RefreshToken = obj.RefreshToken,
+                ExpirationDate = obj.ExpirationDate,
+                IpAddress = obj.IpAddress
             };
         }
     }

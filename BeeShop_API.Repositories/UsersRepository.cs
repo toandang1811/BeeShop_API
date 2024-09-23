@@ -4,16 +4,16 @@ using BeeShop_API.Repositories.Contracts;
 using BeeShop_API.Repositories;
 using Microsoft.EntityFrameworkCore;
 using User = BeeShop_API.Domain.Entities.Users;
+using BeeShop_API.Repositories.Mappers;
 
 namespace BeeShop_API.Repositories
 {
     public class UsersRepository : BaseRepository, IUsersRepository
     {
-        private readonly IUserMapper userMapper;
-
-        public UsersRepository(DataContext context, IUserMapper userMapper) : base(context)
+        private UserMapper _mapper;
+        public UsersRepository(DataContext context) : base(context)
         {
-            this.userMapper = userMapper;
+            _mapper = new UserMapper();
         }
 
         public async Task<bool> UsernameExists(string username)
@@ -32,7 +32,7 @@ namespace BeeShop_API.Repositories
             {
                 var user = await DataContext.Users.FirstAsync(u => u.Username.ToLower() == username.ToLower());
 
-                var result = userMapper.FillFromDataAccess(user);
+                var result = _mapper.FillFromDataAccess(user);
                 result.PasswordHash = user.PasswordHash;
 
                 return result;
@@ -48,7 +48,7 @@ namespace BeeShop_API.Repositories
         {
             var user = await DataContext.Users.FirstAsync(u => u.Email.ToLower() == email.ToLower());
 
-            User result = userMapper.FillFromDataAccess(user);
+            User result = _mapper.FillFromDataAccess(user);
             result.PasswordHash = user.PasswordHash;
 
             return result;
@@ -58,7 +58,7 @@ namespace BeeShop_API.Repositories
         {
             user.ValidateAndThrow();
 
-            await DataContext.Users.AddAsync(userMapper.FillFromDomain(user));
+            await DataContext.Users.AddAsync(_mapper.FillFromDomain(user));
             await DataContext.SaveChangesAsync();
 
             user.PasswordHash = null;

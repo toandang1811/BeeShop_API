@@ -3,16 +3,17 @@ using BeeShop_API.Repositories.Contracts.Mappers;
 using BeeShop_API.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
 using UserSessions = BeeShop_API.Domain.Entities.UserSessions;
+using BeeShop_API.Repositories.Mappers;
 
 namespace BeeShop_API.Repositories
 {
     public class UserSessionsRepository : BaseRepository, IUserSessionsRepository
     {
-        private readonly IUserSessionMapper userSessionMapper;
+        private UserSessionMapper userSessionMapper;
 
-        public UserSessionsRepository(DataContext context, IUserSessionMapper userSessionMapper) : base(context)
+        public UserSessionsRepository(DataContext context) : base(context)
         {
-            this.userSessionMapper = userSessionMapper;
+            this.userSessionMapper = new UserSessionMapper();
         }
 
         public async Task<bool> IsRefreshTokenValidForUser(string refreshToken, Guid userId)

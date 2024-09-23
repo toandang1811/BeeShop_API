@@ -16,23 +16,5 @@ namespace BeeShop_API.Repositories
         {
 
         }
-
-        public async Task<Products> GetByUsernameWithPassword(string username)
-        {
-            try
-            {
-                var user = await DataContext.Users.FirstAsync(u => u.Username.ToLower() == username.ToLower());
-
-                var result = userMapper.FillFromDataAccess(user);
-                result.PasswordHash = user.PasswordHash;
-
-                return result;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            return null;
-        }
     }
 }

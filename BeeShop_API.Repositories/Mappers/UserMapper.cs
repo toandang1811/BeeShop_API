@@ -1,4 +1,5 @@
-﻿using BeeShop_API.Domain.Entities;
+﻿using BeeShop_API.DataAccess;
+using BeeShop_API.Domain.Entities;
 using BeeShop_API.Repositories.Contracts.Mappers;
 using System;
 using System.Collections.Generic;
@@ -8,37 +9,37 @@ using System.Threading.Tasks;
 
 namespace BeeShop_API.Repositories.Mappers
 {
-    public class UserMapper : IUserMapper
+    public class UserMapper : IMapperCommon<DataAccess.Users, Domain.Entities.Users>
     {
-        public DataAccess.Users FillFromDomain(Users user)
+        public Domain.Entities.Users FillFromDataAccess(DataAccess.Users obj)
         {
-            if (user is null)
+            if (obj is null)
             {
-                throw new ArgumentNullException(nameof(user));
+                throw new ArgumentNullException(nameof(obj));
+            }
+
+            return new Domain.Entities.Users
+            {
+                UserId = obj.UserId,
+                Username = obj.Username,
+                Email = obj.Email,
+                PasswordHash = obj.PasswordHash,
+            };
+        }
+
+        public DataAccess.Users FillFromDomain(Domain.Entities.Users obj)
+        {
+            if (obj is null)
+            {
+                throw new ArgumentNullException(nameof(obj));
             }
 
             return new DataAccess.Users
             {
-                UserId = user.UserId,
-                Username = user.Username,
-                PasswordHash = user.PasswordHash,
-                Email = user.Email
-            };
-        }
-
-        public Users FillFromDataAccess(DataAccess.Users user)
-        {
-            if (user is null)
-            {
-                throw new ArgumentNullException(nameof(user));
-            }
-
-            return new Users
-            {
-                UserId = user.UserId,
-                Username = user.Username,
-                Email = user.Email,
-                PasswordHash = user.PasswordHash,
+                UserId = obj.UserId,
+                Username = obj.Username,
+                PasswordHash = obj.PasswordHash,
+                Email = obj.Email
             };
         }
     }

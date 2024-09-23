@@ -11,6 +11,7 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.2",
           "Microsoft.EntityFrameworkCore": "7.0.2",
           "Microsoft.IdentityModel.Tokens": "7.0.2",
+          "X.PagedList": "10.2.1",
           "BeeShop_API.DataAccess": "1.0.0.0",
           "BeeShop_API.Domain": "1.0.0.0"
         },
@@ -163,6 +164,14 @@
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
             "assemblyVersion": "6.15.1.0",
             "fileVersion": "6.15.1.30119"
+          }
+        }
+      },
+      "X.PagedList/10.2.1": {
+        "runtime": {
+          "lib/net6.0/X.PagedList.dll": {
+            "assemblyVersion": "10.2.1.0",
+            "fileVersion": "10.2.1.0"
           }
         }
       },
@@ -322,6 +331,13 @@
       "sha512": "sha512-q3ZLyWmpX4+jW4XITf7Axd+9sC6w2NrQaKcQQT9A8waoknHgaNwSeookpUmPMQDqS0afT9Lh0JYub196vzuzbA==",
       "path": "system.identitymodel.tokens.jwt/6.15.1",
       "hashPath": "system.identitymodel.tokens.jwt.6.15.1.nupkg.sha512"
+    },
+    "X.PagedList/10.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SS2rDErBq4fj6WW7sRb5QHipDjjVjDY3TZEJyx8MjXTEJZ4jrJ1Iks/QVOegkQ2f3JxeXIrkGdsOIKbVEtQnXQ==",
+      "path": "x.pagedlist/10.2.1",
+      "hashPath": "x.pagedlist.10.2.1.nupkg.sha512"
     },
     "BeeShop_API.DataAccess/1.0.0.0": {
       "type": "reference",

@@ -36,18 +36,29 @@ namespace BeeShop_API.DI
                 options.UseSqlServer(connectionString);
             });
 
+            #region Services
             services.AddScoped<ICryptoService, CryptoService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IRecaptchaV2Service, RecaptchaV2Service>();
             services.AddScoped<IRecaptchaV3Service, RecaptchaV3Service>();
+            #endregion
 
-            services.AddScoped<IUserMapper, UserMapper>();
-            services.AddScoped<IUserSessionMapper, UserSessionMapper>();
+            #region Mappers
+            //services.AddScoped<IUserMapper, UserMapper>();
+            //services.AddScoped<IUserSessionMapper, UserSessionMapper>();
+            //services.AddScoped<IProductCategoriesMapper, ProductCategoriesMapper>();
+            #endregion
 
+            #region Repositories
             services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<IUserSessionsRepository, UserSessionsRepository>();
+            //services.AddScoped<IProductCategoriesRepository, ProductCategoriesRepository>();
+            #endregion
 
+            #region BusinessLogics
             services.AddScoped<IAuthBusinessLogic, AuthBusinessLogic>();
+            services.AddScoped<IProductCategoriesBusinessLogic, ProductCategoriesBusinessLogic>();
+            #endregion
 
             return services.BuildServiceProvider();
         }

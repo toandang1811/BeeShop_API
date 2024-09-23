@@ -7,12 +7,33 @@ namespace BeeShop_API.DataAccess
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<Users> Users { get; set; }
+        public DbSet<Roles> Roles { get; set; }
+        public DbSet<UserRoles> UserRoles { get; set; }
         public DbSet<UserSessions> UserSessions { get; set; }
+        public DbSet<ProductCategories> ProductCategories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Users>().ToTable("Users");
             modelBuilder.Entity<UserSessions>().ToTable("UserSessions");
+            modelBuilder.Entity<ProductCategories>().ToTable("ProductCategories");
+            modelBuilder.Entity<Roles>().ToTable("Roles");
+            modelBuilder.Entity<UserRoles>().ToTable("UserRoles");
+            // Thiết lập khóa chính cho UserRole
+            modelBuilder.Entity<UserRoles>()
+                .HasKey(ur => new { ur.UserId, ur.RoleId });
+
+            // Thiết lập quan hệ giữa User và UserRole
+            modelBuilder.Entity<UserRoles>()
+                .HasOne(ur => ur.User)
+                .WithMany(u => u.UserRoles)
+                .HasForeignKey(ur => ur.UserId);
+
+            // Thiết lập quan hệ giữa Role và UserRole
+            modelBuilder.Entity<UserRoles>()
+                .HasOne(ur => ur.Role)
+                .WithMany(r => r.UserRoles)
+                .HasForeignKey(ur => ur.RoleId);
         }
 
 //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

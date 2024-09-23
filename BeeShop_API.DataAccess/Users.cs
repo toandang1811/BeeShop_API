@@ -16,5 +16,7 @@ namespace BeeShop_API.DataAccess
         public string Username { get; set; }
         public string PasswordHash { get; set; }
         public string Email { get; set; }
+
+        public ICollection<UserRoles> UserRoles { get; set; }
     }
 }

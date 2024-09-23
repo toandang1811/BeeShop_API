@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BeeShop_API.DI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05670e4f0947044335e23ba74a405878b2b333d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35676a674a82eacad9275a3c2785d574ca0a419")]
 [assembly: System.Reflection.AssemblyProductAttribute("BeeShop_API.DI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BeeShop_API.DI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

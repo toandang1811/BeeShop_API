@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "N/Yi2rrGhkA=",
+  "dgSpecHash": "YQ5fXPpMVy0=",
   "success": true,
   "projectFilePath": "C:\\TOAN\\BeeShop_API\\BeeShop_API\\BeeShop_API.csproj",
   "expectedPackageFiles": [
@@ -78,6 +78,7 @@
     "C:\\Users\\dangv\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\dangv\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\dangv\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\dangv\\.nuget\\packages\\x.pagedlist\\10.2.1\\x.pagedlist.10.2.1.nupkg.sha512",
     "C:\\Users\\dangv\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.19\\microsoft.windowsdesktop.app.ref.7.0.19.nupkg.sha512",
     "C:\\Users\\dangv\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.19\\microsoft.netcore.app.ref.7.0.19.nupkg.sha512",
     "C:\\Users\\dangv\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.19\\microsoft.aspnetcore.app.ref.7.0.19.nupkg.sha512",

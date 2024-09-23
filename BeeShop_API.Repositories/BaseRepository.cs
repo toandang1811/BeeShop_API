@@ -13,7 +13,6 @@ namespace BeeShop_API.Repositories
         {
             DataContext = context;
         }
-
         public DataContext DataContext { get; private set; }
     }
 }

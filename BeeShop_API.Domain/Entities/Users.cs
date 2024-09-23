@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
 using BeeShop_API.Domain.Validators;
+using BeeShop_API.Domain.Entities.Abstracts;
 
 namespace BeeShop_API.Domain.Entities
 {
-    public class Users
+    public class Users : CommonEFAbstract
     {
         private static UserValidator userValidator = new UserValidator();
 
@@ -14,7 +15,7 @@ namespace BeeShop_API.Domain.Entities
         public string Token { get; set; }
         public string RefreshToken { get; set; }
 
-        public void ValidateAndThrow()
+        public override void ValidateAndThrow()
         {
             userValidator.ValidateAndThrow(this);
         }

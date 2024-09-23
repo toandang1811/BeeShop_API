@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LUNqRn2gCQ0=",
+  "dgSpecHash": "e9a4vwCDhac=",
   "success": true,
   "projectFilePath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "C:\\Users\\dangv\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.15.1\\microsoft.identitymodel.protocols.openidconnect.6.15.1.nupkg.sha512",
     "C:\\Users\\dangv\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.0.2\\microsoft.identitymodel.tokens.7.0.2.nupkg.sha512",
     "C:\\Users\\dangv\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.15.1\\system.identitymodel.tokens.jwt.6.15.1.nupkg.sha512",
+    "C:\\Users\\dangv\\.nuget\\packages\\x.pagedlist\\10.2.1\\x.pagedlist.10.2.1.nupkg.sha512",
     "C:\\Users\\dangv\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.19\\microsoft.windowsdesktop.app.ref.7.0.19.nupkg.sha512",
     "C:\\Users\\dangv\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.19\\microsoft.netcore.app.ref.7.0.19.nupkg.sha512",
     "C:\\Users\\dangv\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.19\\microsoft.aspnetcore.app.ref.7.0.19.nupkg.sha512"

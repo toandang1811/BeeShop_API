@@ -16,7 +16,8 @@ builder.Services.AddMvc()
 DependencyResolver.AddSwagger(builder.Services);
 DependencyResolver.RegisterServices(builder.Services);
 DependencyResolver.AddAuthentication(builder.Services, builder.Configuration);
-DependencyResolver. AddLogging(builder.Services);
+DependencyResolver.AddLogging(builder.Services);
+
 
 var app = builder.Build();
 
@@ -25,7 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseMiddleware<RoleAuthorizationMiddleware>();
 app.UseCors(config =>
 {
     config.WithOrigins(builder.Configuration.GetSection("CORS:Allow-Origins").Get<string[]>())
