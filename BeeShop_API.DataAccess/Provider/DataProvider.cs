@@ -6,7 +6,9 @@ using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace BeeShop_API.DataAccess.Provider
 {
@@ -34,16 +36,19 @@ namespace BeeShop_API.DataAccess.Provider
                 command.CommandType = commanType;
                 if (parameter != null)
                 {
+                    List<string> paraNames = new List<string>();
                     string[] listPara = query.Split(' ');
                     int i = 0;
                     foreach (string item in listPara)
                     {
                         if (item.Contains('@'))
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
+                            paraNames.Add(item);
                             i++;
                         }
                     }
+
+                    command.Parameters.AddRange(ConvertObjectParamsToSqlParams(paraNames.ToArray(), parameter));
                 }
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(data);
@@ -159,6 +164,48 @@ namespace BeeShop_API.DataAccess.Provider
             }
 
             return data;
+        }
+
+        private SqlParameter[] ConvertObjectParamsToSqlParams(string[] parameterName, object[] parameters)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[parameters.Length];
+
+            for (int i = 0; i < parameters.Length; i++)
+            {
+                var p = parameters[i];
+                switch (p)
+                {
+                    case string strValue:
+                        sqlParameters[i] = new SqlParameter(parameterName[i], SqlDbType.NVarChar);
+                        sqlParameters[i].Value = strValue;
+                        break;
+
+                    case int intValue:
+                        sqlParameters[i] = new SqlParameter(parameterName[i], SqlDbType.Int);
+                        sqlParameters[i].Value = intValue;
+                        break;
+
+                    case bool boolValue:
+                        sqlParameters[i] = new SqlParameter(parameterName[i], SqlDbType.Bit);
+                        sqlParameters[i].Value = boolValue;
+                        break;
+
+                    case decimal decimalValue:
+                        sqlParameters[i] = new SqlParameter(parameterName[i], SqlDbType.Decimal);
+                        sqlParameters[i].Value = decimalValue;
+                        break;
+
+                    case DateTime dateTimeValue:
+                        sqlParameters[i] = new SqlParameter(parameterName[i], SqlDbType.DateTime);
+                        sqlParameters[i].Value = dateTimeValue;
+                        break;
+
+                    default:
+                        break;
+                }
+                i++;
+            }
+            return sqlParameters;
         }
     }
 }
