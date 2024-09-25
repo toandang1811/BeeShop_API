@@ -33,10 +33,16 @@ namespace BeeShop_API.Repositories
 
         public async Task<bool> Delete(string id)
         {
-            throw new NotImplementedException();
+            var _pc = DataContext.ProductCategories.Find(id);
+            if (_pc != null)
+            {
+                DataContext.ProductCategories.Remove(_pc);
+                return await DataContext.SaveChangesAsync() > 0;
+            }
+            return false;
         }
 
-        public async Task<IEnumerable<Domain.Entities.ProductCategories>> GetAll(string txtSearch, int ? page)
+        public async Task<IEnumerable<Domain.Entities.ProductCategories>> GetAll(string ? txtSearch, int ? page)
         {
             List<Domain.Entities.ProductCategories> rsItems = new List<Domain.Entities.ProductCategories>();
             var pageSize = 10;

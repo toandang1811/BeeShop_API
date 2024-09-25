@@ -1,4 +1,5 @@
-﻿using BeeShop_API.BusinessLogic.Contracts;
+﻿using BeeShop_API.Attributes;
+using BeeShop_API.BusinessLogic.Contracts;
 using BeeShop_API.Domain.Entities;
 using BeeShop_API.Services.Contracts;
 using Microsoft.AspNetCore.Authorization;
@@ -7,7 +8,7 @@ using System.Security.Claims;
 
 namespace BeeShop_API.Controllers
 {
-    [Authorize]
+    [RoleAuthorize("ADMIN", "EMPLOYEE")]
     [Route("v1/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -70,6 +71,12 @@ namespace BeeShop_API.Controllers
         {
             await authBusinessLogic.ProcessLogoutEverywhere(GetUserIdFromRequest());
 
+            return Ok();
+        }
+
+        [HttpPost("check-authenticate")]        
+        public async Task<IActionResult> CheckAuthenticate()
+        {
             return Ok();
         }
 

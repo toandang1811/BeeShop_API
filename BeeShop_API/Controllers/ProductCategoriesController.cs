@@ -18,7 +18,7 @@ namespace BeeShop_API.Controllers
         }
 
         [HttpPost("get-all")]
-        public async Task<IActionResult> GetAll(string txtSearch, int ? page)
+        public async Task<IActionResult> GetAll(string ? txtSearch, int ? page)
         {
             return new ObjectResult(await _pcBL.GetAll(txtSearch, page));
         }

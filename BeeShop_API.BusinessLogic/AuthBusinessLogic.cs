@@ -22,18 +22,23 @@ namespace BeeShop_API.BusinessLogic
         private readonly IConfiguration configuration;
         private readonly IRecaptchaV2Service recaptchaV2Service;
         private readonly IRecaptchaV3Service recaptchaV3Service;
+        private readonly IUserRolesRepository userRolesRepository;
+        private readonly IRolesRepository rolesRepository;
 
-        public AuthBusinessLogic(IUsersRepository usersRepository, IUserSessionsRepository userSessionsRepository,
+        public AuthBusinessLogic(IUsersRepository usersRepository, IUserSessionsRepository userSessionsRepository, 
+            IUserRolesRepository userRolesRepository, IRolesRepository rolesRepository,
             ICryptoService cryptoService, ITokenService tokenService, IConfiguration configuration,
             IRecaptchaV2Service recaptchaV2Service, IRecaptchaV3Service recaptchaV3Service)
         {
             this.usersRepository = usersRepository;
             this.userSessionsRepository = userSessionsRepository;
+            this.userRolesRepository = userRolesRepository;
             this.cryptoService = cryptoService;
             this.tokenService = tokenService;
             this.configuration = configuration;
             this.recaptchaV2Service = recaptchaV2Service;
             this.recaptchaV3Service = recaptchaV3Service;
+            this.rolesRepository = rolesRepository;
         }
 
         public async Task<Users> ProcessRegisterUserWithRecaptcha(RegisterUser registerUser)
@@ -114,15 +119,18 @@ namespace BeeShop_API.BusinessLogic
             {
                 throw new ApplicationException("Incorrect username/email or password!");
             }
-
             user.PasswordHash = null;
+            var userRoles = await userRolesRepository.GetRolesByUserId(user.UserId);
 
-            var usersClaims = new[]
+            List<Claim> usersClaims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.Username),
                 new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
             };
-
+            foreach (var role in userRoles)
+            {
+                usersClaims.Add(new Claim(ClaimTypes.Role, role.RoleId));
+            }
             user.Token = tokenService.GenerateAccessToken(usersClaims);
             user.RefreshToken = tokenService.GenerateRefreshToken();
 
@@ -161,6 +169,17 @@ namespace BeeShop_API.BusinessLogic
         public async Task ProcessLogoutEverywhere(Guid userId)
         {
             await userSessionsRepository.DeleteByUserId(userId);
+        }
+
+        public async Task<IEnumerable<Roles>> GetAllRoles(Guid UserId)
+        {
+            var userRoles = await userRolesRepository.GetRolesByUserId(UserId);
+            List<Roles> roles = new List<Roles>();
+            foreach (var role in userRoles) 
+            {
+                roles.Add(await rolesRepository.GetById(role.RoleId));
+            }
+            return roles;
         }
 
         private UserSessions GetUserSession(Guid userId, string refreshToken, string ipAddress)

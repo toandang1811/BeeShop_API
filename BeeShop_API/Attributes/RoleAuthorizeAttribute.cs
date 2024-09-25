@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace BeeShop_API.Attributes
 {
@@ -15,6 +17,16 @@ namespace BeeShop_API.Attributes
 
         public void OnAuthorization(AuthorizationFilterContext context)
         {
+            // Bỏ qua xác thực
+            var allowAnonymous = context.ActionDescriptor.EndpointMetadata
+                                        .Any(em => em.GetType() == typeof(AllowAnonymousAttribute));
+
+            if (allowAnonymous)
+            {
+                return;
+            }
+
+            // Kiểm tra có token
             var token = context.HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
             if (string.IsNullOrEmpty(token))
@@ -32,8 +44,8 @@ namespace BeeShop_API.Attributes
                 return;
             }
 
-            // Lấy claim "role"
-            var roleClaim = jwtToken.Claims.FirstOrDefault(c => c.Type == "role");
+            // kiểm tra role
+            var roleClaim = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
 
             if (roleClaim == null || !_roles.Contains(roleClaim.Value))
             {

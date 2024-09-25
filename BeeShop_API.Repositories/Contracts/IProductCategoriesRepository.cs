@@ -11,7 +11,7 @@ namespace BeeShop_API.Repositories.Contracts
     {
         Task<ProductCategories> Add(ProductCategories pc);
         Task<ProductCategories> Update(ProductCategories pc);
-        Task<IEnumerable<ProductCategories>> GetAll(string txtSearch, int ? DataContext);
+        Task<IEnumerable<ProductCategories>> GetAll(string ? txtSearch, int ? DataContext);
         Task<ProductCategories> GetByID(string pcID);
         Task<bool> Delete(string pcID);
     }

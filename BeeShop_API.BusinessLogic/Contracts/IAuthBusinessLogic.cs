@@ -16,5 +16,6 @@ namespace BeeShop_API.BusinessLogic.Contracts
         Task<TokenModel> ProcessRefreshToken(TokenModel tokenModel);
         Task<Users> ProcessRegisterUser(RegisterUser registerUser);
         Task<Users> ProcessRegisterUserWithRecaptcha(RegisterUser registerUser);
+        Task<IEnumerable<Roles>> GetAllRoles(Guid UserId);
     }
 }

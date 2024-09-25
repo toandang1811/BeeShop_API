@@ -17,6 +17,7 @@ using Microsoft.OpenApi.Models;
 using BeeShop_API.Services.Contracts.Google;
 using BeeShop_API.Services.Google;
 using NReco.Logging.File;
+using BeeShop_API.DataAccess.Provider;
 
 namespace BeeShop_API.DI
 {
@@ -29,9 +30,10 @@ namespace BeeShop_API.DI
 
             services.AddHttpClient();
 
+            var connectionString = configurationRoot.GetConnectionString("ConnectionString");
+            DataProvider.ConnectString = connectionString;
             services.AddDbContext<DataContext>(options =>
             {
-                var connectionString = configurationRoot.GetConnectionString("ConnectionString");
                 ServiceProvider sp = services.BuildServiceProvider();
                 options.UseSqlServer(connectionString);
             });
@@ -52,12 +54,18 @@ namespace BeeShop_API.DI
             #region Repositories
             services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<IUserSessionsRepository, UserSessionsRepository>();
-            //services.AddScoped<IProductCategoriesRepository, ProductCategoriesRepository>();
+            services.AddScoped<IProductCategoriesRepository, ProductCategoriesRepository>();
+            services.AddScoped<IUserRolesRepository, UserRolesRepository>();
+            services.AddScoped<IRolesRepository, RolesRepository>();
+            services.AddScoped<IRunFunctionRepository, RunFunctionRepository>();
             #endregion
 
             #region BusinessLogics
             services.AddScoped<IAuthBusinessLogic, AuthBusinessLogic>();
             services.AddScoped<IProductCategoriesBusinessLogic, ProductCategoriesBusinessLogic>();
+            services.AddScoped<IUserRolesBusinessLogic, UserRolesBusinessLogic>();
+            services.AddScoped<IRolesBusinessLogic, RolesBusinessLogic>();
+            services.AddScoped<IRunFunctionBusinessLogic, RunFunctionBusinessLogic>();
             #endregion
 
             return services.BuildServiceProvider();
@@ -68,7 +76,7 @@ namespace BeeShop_API.DI
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(option =>
             {
-                option.SwaggerDoc("v1", new OpenApiInfo { Title = "Identity API", Version = "v1" });
+                option.SwaggerDoc("v1", new OpenApiInfo { Title = "BeeShop API", Version = "v1" });
                 option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,

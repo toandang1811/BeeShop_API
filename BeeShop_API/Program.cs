@@ -12,6 +12,16 @@ builder.Services.AddMvc()
                  options.JsonSerializerOptions.DefaultIgnoreCondition
                        = JsonIgnoreCondition.WhenWritingNull;
              });
+builder.Services.Configure<RoleAuthorizationOptions>(options =>
+{
+    options.RequiredRoles = new[] { "ADMIN", "EMPLOYEE", "CUSTOMER" };
+});
+//builder.Services.AddMvc()
+//    .AddJsonOptions(options =>
+//    {
+//        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+//        options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+//    });
 
 DependencyResolver.AddSwagger(builder.Services);
 DependencyResolver.RegisterServices(builder.Services);
@@ -25,6 +35,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
 app.UseMiddleware<RoleAuthorizationMiddleware>();
 app.UseCors(config =>
@@ -33,10 +44,10 @@ app.UseCors(config =>
        .AllowAnyHeader().AllowAnyMethod();
 });
 
-//if (!app.Environment.IsDevelopment())
+//app.UseEndpoints(endpoints =>
 //{
-//    app.UseHttpsRedirection();
-//}
+//    endpoints.MapControllers();
+//});
 
 app.HandleExceptionsAsync();
 
