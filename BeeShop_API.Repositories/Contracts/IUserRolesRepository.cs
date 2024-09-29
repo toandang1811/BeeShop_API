@@ -14,5 +14,6 @@ namespace BeeShop_API.Repositories.Contracts
         Task<IEnumerable<UserRoles>> GetAll(string ? txtSearch, int ? page);
         Task<bool> Delete(Guid UserId, string RoleId);
         Task<IEnumerable<Domain.Entities.UserRoles>> GetRolesByUserId(Guid UserId);
+        Task<bool> CheckHasRole(Guid UserId, string roleId);
     }
 }

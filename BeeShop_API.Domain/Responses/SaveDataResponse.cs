@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BeeShop_API.Domain.Responses
 {
-    public class SaveDataResponse : BaseResponse
+    public class SaveDataResponse : BaseResponse<int>
     {
         public int RowCountAffected {  get; set; }
     }

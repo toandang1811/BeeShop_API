@@ -10,11 +10,11 @@ namespace BeeShop_API.BusinessLogic.Contracts
 {
     public interface IRunFunctionBusinessLogic
     {
-        Task<DataSet> GetData(string sqlString, object[] parameters);
-        Task<DataSet> GetDataByProc(string sqlString, object[] parameters);
-        Task<int> SaveData(string sqlString, object[] parameters);
-        Task<int> SaveDataByProc(string sqlString, object[] parameters);
-        Task<object> GetObject (string sqlString, object[] parameters);
-        Task<object> GetObjectByProc(string sqlString, object[] parameters);
+        Task<Dictionary<int, List<Dictionary<string, object>>>> GetData(string sqlString, string[] parameters = null, object[] values = null);
+        Task<Dictionary<int, List<Dictionary<string, object>>>> GetDataByProc(string sqlString, string[] parameters = null, object[] values = null);
+        Task<int> SaveData(string sqlString, string[] parameters = null, object[] values = null);
+        Task<int> SaveDataByProc(string sqlString, string[] parameters = null, object[] values = null);
+        Task<object> GetObject (string sqlString, string[] parameters = null, object[] values = null);
+        Task<object> GetObjectByProc(string sqlString, string[] parameters = null, object[] values = null);
     }
 }

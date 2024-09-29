@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace BeeShop_API.DataAccess
 {
-    [Table(name: "UserRoles")]
     public class UserRoles
     {
         public Guid UserId { get; set; }

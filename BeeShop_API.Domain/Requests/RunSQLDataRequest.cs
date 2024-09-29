@@ -9,6 +9,7 @@ namespace BeeShop_API.Domain.Requests
     public class RunSQLDataRequest
     {
         public string SqlString { get; set; }
-        public object[] Parameters { get; set; }
+        public string[] Parameters { get; set; }
+        public object[] Values { get; set; }
     }
 }
