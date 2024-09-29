@@ -30,5 +30,10 @@ namespace BeeShop_API.BusinessLogic
         {
             return await repository.GetAll(txtSearch, page);
         }
+
+        public async Task<bool> CheckHasRole(Guid UserId, string RoleId)
+        {
+            return await repository.CheckHasRole(UserId, RoleId);
+        }
     }
 }

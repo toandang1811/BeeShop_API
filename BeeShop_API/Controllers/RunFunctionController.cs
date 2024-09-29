@@ -26,36 +26,34 @@ namespace BeeShop_API.Controllers
         [HttpPost("get-data")]
         public async Task<IActionResult> GetData([FromBody] RunSQLDataRequest request)
         {
-            GetDataResponse res = new GetDataResponse();
+            BaseResponse<Dictionary<int, List<Dictionary<string, object>>>> res = new BaseResponse<Dictionary<int, List<Dictionary<string, object>>>>();
 
             try
             {
-                res.Data = await runFunctionBusinessLogic.GetData(request.SqlString, request.Parameters);
+                res.Data = await runFunctionBusinessLogic.GetData(request.SqlString, request.Parameters, request.Values);
             }
             catch (Exception ex) 
             {
                 res.IsError = true;
                 res.ErrorMessage = ex.Message;
             }
-            string jsonString = JsonConvert.SerializeObject(res);
-            return Ok(jsonString);
+            return Ok(res);
         }
 
         [HttpPost("get-data-by-proc")]
         public async Task<IActionResult> GetDataByProc([FromBody] RunSQLDataRequest request)
         {
-            GetDataResponse res = new GetDataResponse();
+            BaseResponse<Dictionary<int, List<Dictionary<string, object>>>> res = new BaseResponse<Dictionary<int, List<Dictionary<string, object>>>>();
             try
             {
-                res.Data = await runFunctionBusinessLogic.GetDataByProc(request.SqlString, request.Parameters);
+                res.Data = await runFunctionBusinessLogic.GetDataByProc(request.SqlString, request.Parameters, request.Values);
             }
             catch (Exception ex)
             {
                 res.IsError = true;
                 res.ErrorMessage = ex.Message;
             }
-            string jsonString = JsonConvert.SerializeObject(res);
-            return Ok(jsonString);
+            return Ok(res);
         }
 
         [HttpPost("save-data")]
@@ -64,15 +62,14 @@ namespace BeeShop_API.Controllers
             SaveDataResponse res = new SaveDataResponse();
             try
             {
-                res.RowCountAffected = await runFunctionBusinessLogic.SaveData(request.SqlString, request.Parameters);
+                res.RowCountAffected = await runFunctionBusinessLogic.SaveData(request.SqlString, request.Parameters, request.Values);
             }
             catch (Exception ex)
             {
                 res.IsError = true;
                 res.ErrorMessage = ex.Message;
             }
-            string jsonString = JsonConvert.SerializeObject(res);
-            return Ok(jsonString);
+            return Ok(res);
         }
 
         [HttpPost("save-data-by-proc")]
@@ -81,49 +78,46 @@ namespace BeeShop_API.Controllers
             SaveDataResponse res = new SaveDataResponse();
             try
             {
-                res.RowCountAffected = await runFunctionBusinessLogic.SaveDataByProc(request.SqlString, request.Parameters);
+                res.RowCountAffected = await runFunctionBusinessLogic.SaveDataByProc(request.SqlString, request.Parameters, request.Values);
             }
             catch (Exception ex)
             {
                 res.IsError = true;
                 res.ErrorMessage = ex.Message;
             }
-            string jsonString = JsonConvert.SerializeObject(res);
-            return Ok(jsonString);
+            return Ok(res);
         }
 
         [HttpPost("get-object")]
         public async Task<IActionResult> GetObject([FromBody] RunSQLDataRequest request)
         {
-            GetObjectResponse res = new GetObjectResponse();
+            BaseResponse<object> res = new BaseResponse<object>();
             try
             {
-                res.Data = await runFunctionBusinessLogic.GetObject(request.SqlString, request.Parameters);
+                res.Data = await runFunctionBusinessLogic.GetObject(request.SqlString, request.Parameters, request.Values);
             }
             catch (Exception ex)
             {
                 res.IsError = true;
                 res.ErrorMessage = ex.Message;
             }
-            string jsonString = JsonConvert.SerializeObject(res);
-            return Ok(jsonString);
+            return Ok(res);
         }
 
         [HttpPost("get-object-by-proc")]
         public async Task<IActionResult> GetObjectByProc([FromBody] RunSQLDataRequest request)
         {
-            GetObjectResponse res = new GetObjectResponse();
+            BaseResponse<object> res = new BaseResponse<object>();
             try
             {
-                res.Data = await runFunctionBusinessLogic.GetObjectByProc(request.SqlString, request.Parameters);
+                res.Data = await runFunctionBusinessLogic.GetObjectByProc(request.SqlString, request.Parameters, request.Values);
             }
             catch (Exception ex)
             {
                 res.IsError = true;
                 res.ErrorMessage = ex.Message;
             }
-            string jsonString = JsonConvert.SerializeObject(res);
-            return Ok(jsonString);
+            return Ok(res);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace BeeShop_API.Controllers
 
         [AllowAnonymous]
         [HttpPost("get-all")]
-        public async Task<IActionResult> GetAll(string ? txtSeach, int page)
+        public async Task<IActionResult> GetAll(string ? txtSeach, int ? page)
         {
             return new ObjectResult(await urBussiness.GetAll(txtSeach, page));
         }

@@ -26,184 +26,234 @@ namespace BeeShop_API.DataAccess.Provider
             private set { DataProvider.instance = value; }
         }
 
-        public DataSet GetData(CommandType commanType, string query, object[] parameter = null)
+        public DataSet GetData(CommandType commanType, string query, string[] parameters = null, object[] values = null)
         {
-            DataSet data = new DataSet();using (SqlConnection connection = new SqlConnection(_connectString))
-            try
+            DataSet data = new DataSet();
+            if (parameters != null)
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                command.CommandType = commanType;
-                if (parameter != null)
-                {
-                    List<string> paraNames = new List<string>();
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
+                using (SqlConnection connection = new SqlConnection(_connectString))
+                    try
                     {
-                        if (item.Contains('@'))
+                        connection.Open();
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.CommandType = commanType;
+                        if (parameters != null)
                         {
-                            paraNames.Add(item);
-                            i++;
-                        }
-                    }
+                            //List<string> paraNames = new List<string>();
+                            //string[] listPara = query.Split(' ');
+                            //int i = 0;
+                            //foreach (string item in listPara)
+                            //{
+                            //    if (item.Contains('@'))
+                            //    {
+                            //        paraNames.Add(item);
+                            //        i++;
+                            //    }
+                            //}
 
-                    command.Parameters.AddRange(ConvertObjectParamsToSqlParams(paraNames.ToArray(), parameter));
-                }
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(data);
-            }
-            catch (SqlException sqlEx)
-            {
-                throw new Exception("Truy vẫn đã xảy ra lỗi.", sqlEx);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Đã có lỗi xảy ra trong quá trình xử lý.", ex);
-            }
-            finally
-            {
-                connection.Close();
+                            command.Parameters.AddRange(ConvertObjectParamsToSqlParams(parameters, values));
+                        }
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        adapter.Fill(data);
+                    }
+                    catch (SqlException sqlEx)
+                    {
+                        throw new Exception("Truy vẫn đã xảy ra lỗi.", sqlEx);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Đã có lỗi xảy ra trong quá trình xử lý.", ex);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
             }
                 
             return data;
         }
 
-        public int SaveData(CommandType commanType, string query, object[] parameter = null)
+        public int SaveData(CommandType commanType, string query, string[] parameters = null, object[] values = null)
         {
             int data = 0;
-            DbTransaction trans = null;
-            using (SqlConnection connection = new SqlConnection(_connectString))
+            if (parameters != null)
             {
-                try
+                DbTransaction trans = null;
+                using (SqlConnection connection = new SqlConnection(_connectString))
                 {
-                    connection.Open();
-                    trans = connection.BeginTransaction();
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.CommandType = commanType;
-                    if (parameter != null)
+                    try
                     {
-                        string[] listPara = query.Split(' ');
-                        int i = 0;
-                        foreach (string item in listPara)
+                        connection.Open();
+                        trans = connection.BeginTransaction();
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.CommandType = commanType;
+                        if (parameters != null)
                         {
-                            if (item.Contains('@'))
+                            int i = 0;
+                            foreach (string item in parameters)
                             {
-                                command.Parameters.AddWithValue(item, parameter[i]);
-                                i++;
+                                if (item.Contains('@'))
+                                {
+                                    command.Parameters.AddWithValue(item, values[i]);
+                                    i++;
+                                }
                             }
                         }
-                    }
 
-                    data = command.ExecuteNonQuery();
-                    trans.Commit();
-                }
-                catch (SqlException sqlEx) 
-                {
-                    trans?.Rollback();
-                    throw new Exception("Truy vẫn đã xảy ra lỗi.", sqlEx);
-                }
-                catch (Exception ex) 
-                {
-                    trans?.Rollback();
-                    throw new Exception("Đã có lỗi xảy ra trong quá trình xử lý.", ex);
-                }
-                finally
-                {
-                    if (trans != null)
+                        data = command.ExecuteNonQuery();
+                        trans.Commit();
+                    }
+                    catch (SqlException sqlEx)
                     {
-                        trans = null;
+                        trans?.Rollback();
+                        throw new Exception("Truy vẫn đã xảy ra lỗi.", sqlEx);
                     }
-                    connection.Close();
+                    catch (Exception ex)
+                    {
+                        trans?.Rollback();
+                        throw new Exception("Đã có lỗi xảy ra trong quá trình xử lý.", ex);
+                    }
+                    finally
+                    {
+                        if (trans != null)
+                        {
+                            trans = null;
+                        }
+                        connection.Close();
+                    }
+
                 }
-
             }
-
             return data;
         }
 
-        public object GetObject(CommandType commanType, string query, object[] parameter = null)
+        public object GetObject(CommandType commanType, string query, string[] parameters = null, object[] values = null)
         {
             object data = 0;
-
-            using (SqlConnection connection = new SqlConnection(_connectString))
+            if (parameters != null) 
             {
-                try
+                using (SqlConnection connection = new SqlConnection(_connectString))
                 {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.CommandType = commanType;
-                    if (parameter != null)
+                    try
                     {
-                        string[] listPara = query.Split(' ');
-                        int i = 0;
-                        foreach (string item in listPara)
+                        connection.Open();
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.CommandType = commanType;
+                        if (parameters != null)
                         {
-                            if (item.Contains('@'))
+                            int i = 0;
+                            foreach (string item in parameters)
                             {
-                                command.Parameters.AddWithValue(item, parameter[i]);
-                                i++;
+                                if (item.Contains('@'))
+                                {
+                                    command.Parameters.AddWithValue(item, values[i]);
+                                    i++;
+                                }
                             }
                         }
-                    }
 
-                    data = command.ExecuteScalar();
-                }
-                catch (SqlException sqlEx)
-                {
-                    throw new Exception("Truy vẫn đã xảy ra lỗi.", sqlEx);
-                }
-                catch (Exception ex) 
-                {
-                    throw new Exception("Đã có lỗi xảy ra trong quá trình xử lý.", ex);
-                }
-                finally
-                {
-                    connection.Close();
+                        data = command.ExecuteScalar();
+                    }
+                    catch (SqlException sqlEx)
+                    {
+                        throw new Exception("Truy vẫn đã xảy ra lỗi.", sqlEx);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Đã có lỗi xảy ra trong quá trình xử lý.", ex);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
             }
 
             return data;
         }
 
-        private SqlParameter[] ConvertObjectParamsToSqlParams(string[] parameterName, object[] parameters)
+        private SqlParameter[] ConvertObjectParamsToSqlParams(string[] parameters, object[] values)
         {
             SqlParameter[] sqlParameters = new SqlParameter[parameters.Length];
 
             for (int i = 0; i < parameters.Length; i++)
             {
-                var p = parameters[i];
-                switch (p)
+                var p = values[i];
+
+                // Nếu tham số là JsonElement, kiểm tra kiểu ValueKind
+                if (p is JsonElement jsonElement)
                 {
-                    case string strValue:
-                        sqlParameters[i] = new SqlParameter(parameterName[i], SqlDbType.NVarChar);
-                        sqlParameters[i].Value = strValue;
-                        break;
+                    switch (jsonElement.ValueKind)
+                    {
+                        case JsonValueKind.String:
+                            sqlParameters[i] = new SqlParameter(parameters[i], SqlDbType.NVarChar);
+                            sqlParameters[i].Value = jsonElement.GetString();
+                            break;
 
-                    case int intValue:
-                        sqlParameters[i] = new SqlParameter(parameterName[i], SqlDbType.Int);
-                        sqlParameters[i].Value = intValue;
-                        break;
+                        case JsonValueKind.Number:
+                            if (jsonElement.TryGetInt32(out int intValue))
+                            {
+                                sqlParameters[i] = new SqlParameter(parameters[i], SqlDbType.Int);
+                                sqlParameters[i].Value = intValue;
+                            }
+                            else if (jsonElement.TryGetDecimal(out decimal decimalValue))
+                            {
+                                sqlParameters[i] = new SqlParameter(parameters[i], SqlDbType.Decimal);
+                                sqlParameters[i].Value = decimalValue;
+                            }
+                            break;
 
-                    case bool boolValue:
-                        sqlParameters[i] = new SqlParameter(parameterName[i], SqlDbType.Bit);
-                        sqlParameters[i].Value = boolValue;
-                        break;
+                        case JsonValueKind.True:
+                        case JsonValueKind.False:
+                            sqlParameters[i] = new SqlParameter(parameters[i], SqlDbType.Bit);
+                            sqlParameters[i].Value = jsonElement.GetBoolean();
+                            break;
 
-                    case decimal decimalValue:
-                        sqlParameters[i] = new SqlParameter(parameterName[i], SqlDbType.Decimal);
-                        sqlParameters[i].Value = decimalValue;
-                        break;
+                        case JsonValueKind.Null:
+                            sqlParameters[i] = new SqlParameter(parameters[i], DBNull.Value);
+                            break;
 
-                    case DateTime dateTimeValue:
-                        sqlParameters[i] = new SqlParameter(parameterName[i], SqlDbType.DateTime);
-                        sqlParameters[i].Value = dateTimeValue;
-                        break;
+                        case JsonValueKind.Undefined:
+                            throw new ArgumentException($"Tham số '{parameters[i]}' là Undefined và không thể xử lý.");
 
-                    default:
-                        break;
+                        default:
+                            throw new ArgumentException($"Không hỗ trợ kiểu ValueKind '{jsonElement.ValueKind}' cho tham số '{parameters[i]}'.");
+                    }
                 }
-                i++;
+                else
+                {
+                    // Xử lý các kiểu dữ liệu khác ngoài JsonElement
+                    switch (p)
+                    {
+                        case string strValue:
+                            sqlParameters[i] = new SqlParameter(parameters[i], SqlDbType.NVarChar);
+                            sqlParameters[i].Value = strValue;
+                            break;
+
+                        case int intValue:
+                            sqlParameters[i] = new SqlParameter(parameters[i], SqlDbType.Int);
+                            sqlParameters[i].Value = intValue;
+                            break;
+
+                        case bool boolValue:
+                            sqlParameters[i] = new SqlParameter(parameters[i], SqlDbType.Bit);
+                            sqlParameters[i].Value = boolValue;
+                            break;
+
+                        case decimal decimalValue:
+                            sqlParameters[i] = new SqlParameter(parameters[i], SqlDbType.Decimal);
+                            sqlParameters[i].Value = decimalValue;
+                            break;
+
+                        case DateTime dateTimeValue:
+                            sqlParameters[i] = new SqlParameter(parameters[i], SqlDbType.DateTime);
+                            sqlParameters[i].Value = dateTimeValue;
+                            break;
+
+                        default:
+                            throw new ArgumentException($"Không hỗ trợ kiểu tham số '{p.GetType()}' cho tham số '{parameters[i]}'.");
+                    }
+                }
             }
             return sqlParameters;
         }

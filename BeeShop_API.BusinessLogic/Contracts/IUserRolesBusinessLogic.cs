@@ -13,5 +13,6 @@ namespace BeeShop_API.BusinessLogic.Contracts
         //Task<UserRoles> Update(UserRoles pc);
         Task<IEnumerable<UserRoles>> GetAll(string? txtSearch, int? page);
         Task<bool> Delete(Guid UserId, string RoleId);
+        Task<bool> CheckHasRole(Guid UserId, string RoleId);
     }
 }

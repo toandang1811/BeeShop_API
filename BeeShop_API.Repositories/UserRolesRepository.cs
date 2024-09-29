@@ -72,5 +72,15 @@ namespace BeeShop_API.Repositories
             }
             return userRoles;
         }
+
+        public async Task<bool> CheckHasRole(Guid UserId, string roleId)
+        {
+            DataAccess.UserRoles ur = await DataContext.UserRoles.FirstAsync(x => x.UserId == UserId && x.RoleId == roleId);
+            if (ur != null) 
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

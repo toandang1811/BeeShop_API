@@ -839,23 +839,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AS090\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\dangv\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj",
+      "projectUniqueName": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj",
       "projectName": "BeeShop_API.Repositories",
-      "projectPath": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj",
-      "packagesPath": "C:\\Users\\AS090\\.nuget\\packages\\",
-      "outputPath": "D:\\BeeShop\\BeeShop_API\\BeeShop_API.Repositories\\obj\\",
+      "projectPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Repositories\\BeeShop_API.Repositories.csproj",
+      "packagesPath": "C:\\Users\\dangv\\.nuget\\packages\\",
+      "outputPath": "C:\\TOAN\\BeeShop_API\\BeeShop_API.Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\AS090\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dangv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -863,7 +864,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://nuget.grapecity.com/nuget": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\TOAN\\02.ERP9\\00.BUILD": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -876,6 +878,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -910,21 +917,27 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.19, 7.0.19]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.19, 7.0.19]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.19, 7.0.19]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.grapecity.com/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    }
-  ]
+  }
 }

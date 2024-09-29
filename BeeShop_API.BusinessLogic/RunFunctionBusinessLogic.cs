@@ -17,34 +17,76 @@ namespace BeeShop_API.BusinessLogic
         {
             this._repository = repository;
         }
-        public async Task<DataSet> GetData(string sqlString, object[] parameters)
+        public async Task<Dictionary<int, List<Dictionary<string, object>>>> GetData(string sqlString, string[] parameters = null, object[] values = null)
         {
-            return await _repository.GetData(sqlString, parameters, CommandType.Text);
+            Dictionary<int, List<Dictionary<string, object>>> data = new Dictionary<int, List<Dictionary<string, object>>>();
+            DataSet ds = await _repository.GetData(sqlString, parameters, values, CommandType.Text);
+            if (ds != null)
+            {
+                int i = 0;
+                foreach (DataTable table in ds.Tables) 
+                {
+                    List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
+                    foreach (DataRow row in table.Rows)
+                    {
+                        Dictionary<string, object> dict = new Dictionary<string, object>();
+                        foreach (DataColumn col in table.Columns)
+                        {
+                            dict.Add(col.ColumnName, row[col.ColumnName]);
+                        }
+                        list.Add(dict);
+                    }
+                    data.Add(i, list);
+                    i++;
+                }
+            }
+            return data;
         }
 
-        public async Task<DataSet> GetDataByProc(string sqlString, object[] parameters)
+        public async Task<Dictionary<int, List<Dictionary<string, object>>>> GetDataByProc(string sqlString, string[] parameters = null, object[] values = null)
         {
-            return await _repository.GetData(sqlString, parameters, CommandType.StoredProcedure);
+            Dictionary<int, List<Dictionary<string, object>>> data = new Dictionary<int, List<Dictionary<string, object>>>();
+            DataSet ds = await _repository.GetData(sqlString, parameters, values, CommandType.StoredProcedure);
+            if (ds != null)
+            {
+                int i = 0;
+                foreach (DataTable table in ds.Tables)
+                {
+                    List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
+                    foreach (DataRow row in table.Rows)
+                    {
+                        Dictionary<string, object> dict = new Dictionary<string, object>();
+                        foreach (DataColumn col in table.Columns)
+                        {
+                            dict.Add(col.ColumnName, row[col.ColumnName]);
+                        }
+                        list.Add(dict);
+                    }
+                    data.Add(i, list);
+                    i++;
+                }
+            }
+            return data;
         }
 
-        public async Task<object> GetObject(string sqlString, object[] parameters)
+        public async Task<object> GetObject(string sqlString, string[] parameters = null, object[] values = null)
         {
-            return  await _repository.GetObject(sqlString, parameters, CommandType.Text);
+            return  await _repository.GetObject(sqlString, parameters, values, CommandType.Text);
         }
 
-        public async Task<object> GetObjectByProc(string sqlString, object[] parameters)
+        public async Task<object> GetObjectByProc(string sqlString, string[] parameters = null, object[] values = null)
         {
-            return await _repository.GetObject(sqlString, parameters, CommandType.StoredProcedure);
+            return await _repository.GetObject(sqlString, parameters, values, CommandType.StoredProcedure);
         }
 
-        public async Task<int> SaveData(string sqlString, object[] parameters)
+        public async Task<int> SaveData(string sqlString, string[] parameters = null, object[] values = null)
         {
-            return await _repository.SaveData(sqlString, parameters, CommandType.Text);
+            return await _repository.SaveData(sqlString, parameters, values, CommandType.Text);
         }
 
-        public async Task<int> SaveDataByProc(string sqlString, object[] parameters)
+        public async Task<int> SaveDataByProc(string sqlString, string[] parameters = null, object[] values = null)
         {
-            return await _repository.SaveData(sqlString, parameters, CommandType.StoredProcedure);
+            return await _repository.SaveData(sqlString, parameters, values, CommandType.StoredProcedure);
         }
     }
 }

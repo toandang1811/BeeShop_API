@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BeeShop_API.Domain.Responses
+namespace BeeShop_API.Domain.Requests
 {
-    public class GetObjectResponse : BaseResponse
+    public class CheckPermissionrequest
     {
-        public object Data { get; set; }
+        public string Roles { get; set; }
     }
 }
