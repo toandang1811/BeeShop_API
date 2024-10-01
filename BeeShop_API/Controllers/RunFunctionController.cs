@@ -1,123 +1,92 @@
-﻿using BeeShop_API.BusinessLogic;
+﻿using BeeShop_API.Attributes;
 using BeeShop_API.BusinessLogic.Contracts;
-using BeeShop_API.Domain.Requests;
-using BeeShop_API.Domain.Responses;
+using BeeShop_API.Domain.Entities;
+using BeeShop_API.Services.Contracts;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json.Serialization;
-using System.Data;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Newtonsoft.Json;
+using System.Security.Claims;
 
 namespace BeeShop_API.Controllers
 {
-    [Authorize]
+    [RoleAuthorize("ADMIN", "EMPLOYEE")]
     [Route("v1/[controller]")]
     [ApiController]
-    public class RunFunctionController : ControllerBase
+    public class AuthController : ControllerBase
     {
-        private readonly IRunFunctionBusinessLogic runFunctionBusinessLogic;
-        public RunFunctionController(IRunFunctionBusinessLogic runFunctionBusinessLogic)
+        private readonly IAuthBusinessLogic authBusinessLogic;
+        private readonly ITokenService tokenService;
+
+        public AuthController(IAuthBusinessLogic authBusinessLogic, ITokenService tokenService)
         {
-            this.runFunctionBusinessLogic = runFunctionBusinessLogic;
+            this.authBusinessLogic = authBusinessLogic;
+            this.tokenService = tokenService;
         }
 
-        [HttpPost("get-data")]
-        public async Task<IActionResult> GetData([FromBody] RunSQLDataRequest request)
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterUser registerUser)
         {
-            BaseResponse<Dictionary<int, List<Dictionary<string, object>>>> res = new BaseResponse<Dictionary<int, List<Dictionary<string, object>>>>();
-
-            try
-            {
-                res.Data = await runFunctionBusinessLogic.GetData(request.SqlString, request.Parameters, request.Values);
-            }
-            catch (Exception ex) 
-            {
-                res.IsError = true;
-                res.ErrorMessage = ex.Message;
-            }
-            return Ok(res);
+            return new ObjectResult(await authBusinessLogic.ProcessRegisterUser(registerUser));
         }
 
-        [HttpPost("get-data-by-proc")]
-        public async Task<IActionResult> GetDataByProc([FromBody] RunSQLDataRequest request)
+        [AllowAnonymous]
+        [HttpPost("register-mobile")]
+        public async Task<IActionResult> RegisterMobile([FromBody] RegisterUser registerUser)
         {
-            BaseResponse<Dictionary<int, List<Dictionary<string, object>>>> res = new BaseResponse<Dictionary<int, List<Dictionary<string, object>>>>();
-            try
-            {
-                res.Data = await runFunctionBusinessLogic.GetDataByProc(request.SqlString, request.Parameters, request.Values);
-            }
-            catch (Exception ex)
-            {
-                res.IsError = true;
-                res.ErrorMessage = ex.Message;
-            }
-            return Ok(res);
+            return new ObjectResult(await authBusinessLogic.ProcessRegisterUser(registerUser));
         }
 
-        [HttpPost("save-data")]
-        public async Task<IActionResult> SaveData([FromBody] RunSQLDataRequest request)
+        [AllowAnonymous]
+        [HttpPost("authenticate")]
+        public async Task<IActionResult> Authenticate([FromBody] LoginCredentials loginCredentials)
         {
-            SaveDataResponse res = new SaveDataResponse();
-            try
-            {
-                res.RowCountAffected = await runFunctionBusinessLogic.SaveData(request.SqlString, request.Parameters, request.Values);
-            }
-            catch (Exception ex)
-            {
-                res.IsError = true;
-                res.ErrorMessage = ex.Message;
-            }
-            return Ok(res);
+            return new ObjectResult(await authBusinessLogic.ProcessAuthenticateWithRecaptcha(loginCredentials));
         }
 
-        [HttpPost("save-data-by-proc")]
-        public async Task<IActionResult> SaveDataByProc([FromBody] RunSQLDataRequest request)
+        [AllowAnonymous]
+        [HttpPost("authenticate-mobile")]
+        public async Task<IActionResult> AuthenticateMobile([FromBody] LoginCredentials loginCredentials)
         {
-            SaveDataResponse res = new SaveDataResponse();
-            try
-            {
-                res.RowCountAffected = await runFunctionBusinessLogic.SaveDataByProc(request.SqlString, request.Parameters, request.Values);
-            }
-            catch (Exception ex)
-            {
-                res.IsError = true;
-                res.ErrorMessage = ex.Message;
-            }
-            return Ok(res);
+            var rs = new ObjectResult(await authBusinessLogic.ProcessAuthenticate(loginCredentials));
+            return rs;
         }
 
-        [HttpPost("get-object")]
-        public async Task<IActionResult> GetObject([FromBody] RunSQLDataRequest request)
+        [AllowAnonymous]
+        [HttpPost("refreshToken")]
+        public async Task<IActionResult> RefreshToken([FromBody] TokenModel tokenModel)
         {
-            BaseResponse<object> res = new BaseResponse<object>();
-            try
-            {
-                res.Data = await runFunctionBusinessLogic.GetObject(request.SqlString, request.Parameters, request.Values);
-            }
-            catch (Exception ex)
-            {
-                res.IsError = true;
-                res.ErrorMessage = ex.Message;
-            }
-            return Ok(res);
+            return new ObjectResult(await authBusinessLogic.ProcessRefreshToken(tokenModel));
         }
 
-        [HttpPost("get-object-by-proc")]
-        public async Task<IActionResult> GetObjectByProc([FromBody] RunSQLDataRequest request)
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout([FromBody] TokenModel tokenModel)
         {
-            BaseResponse<object> res = new BaseResponse<object>();
-            try
-            {
-                res.Data = await runFunctionBusinessLogic.GetObjectByProc(request.SqlString, request.Parameters, request.Values);
-            }
-            catch (Exception ex)
-            {
-                res.IsError = true;
-                res.ErrorMessage = ex.Message;
-            }
-            return Ok(res);
+            await authBusinessLogic.ProcessLogout(tokenModel.RefreshToken, GetUserIdFromRequest());
+
+            return Ok();
+        }
+
+        [HttpPost("logout-everywhere")]
+        public async Task<IActionResult> LogoutEverywhere()
+        {
+            await authBusinessLogic.ProcessLogoutEverywhere(GetUserIdFromRequest());
+
+            return Ok();
+        }
+
+        [HttpPost("check-authenticate")]
+        public async Task<IActionResult> CheckAuthenticate()
+        {
+            return Ok();
+        }
+
+        private Guid GetUserIdFromRequest()
+        {
+            var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", string.Empty);
+            var principal = tokenService.GetPrincipalFromExpiredToken(token);
+            var userId = new Guid(principal.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            return userId;
         }
     }
 }
